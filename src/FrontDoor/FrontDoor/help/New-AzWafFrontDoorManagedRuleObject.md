@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
-online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-azfrontdoormanagedruleobject
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-AzWafFrontDoorManagedRuleObject
 schema: 2.0.0
 ---
 
-# New-AzFrontDoorManagedRuleObject
+# New-AzWafFrontDoorManagedRuleObject
 
 ## SYNOPSIS
 Create ManagedRule Object for WAF policy creation
@@ -13,7 +13,7 @@ Create ManagedRule Object for WAF policy creation
 ## SYNTAX
 
 ```
-New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
+New-AzWafFrontDoorManagedRuleObject -Type <String> -Version <String>
  [-RuleGroupOverride <PSAzureRuleGroupOverride[]>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
@@ -32,7 +32,7 @@ PS C:\> $override1 = New-AzFrontDoorRuleGroupOverrideObject -RuleGroupName SQLI 
 PS C:\> $ruleOverride3 = New-AzFrontDoorManagedRuleOverrideObject -RuleId "941280" -Action Log -EnabledState Enabled
 PS C:\> $override2 = New-AzFrontDoorRuleGroupOverrideObject -RuleGroupName XSS -ManagedRuleOverride $ruleOverride3
 
-PS C:\> New-AzFrontDoorManagedRuleObject -Type DefaultRuleSet -Version "preview-0.1" -RuleGroupOverride $override1,$override2
+PS C:\> New-AzWafFrontDoorManagedRuleObject -Type DefaultRuleSet -Version "preview-0.1" -RuleGroupOverride $override1,$override2
 
 RuleGroupOverrides RuleSetType    RuleSetVersion
 ------------------ -----------    --------------
@@ -118,6 +118,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md)
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md)
-[New-AzFrontDoorRuleGroupOverrideObject](./New-AzFrontDoorRuleGroupOverrideObject.md)
+[New-AzWafFrontDoorFireWallPolicy](./New-AzWafFrontDoorFireWallPolicy.md)
+[Set-AzWafFrontDoorFireWallPolicy](./Set-AzWafFrontDoorFireWallPolicy.md)
+[New-AzWafFrontDoorRuleGroupOverrideObject](./New-AzWafFrontDoorRuleGroupOverrideObject.md)

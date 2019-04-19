@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
-online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-azfrontdoorrulegroupoverrideobject
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-AzWafFrontDoorRuleGroupOverrideObject
 schema: 2.0.0
 ---
 
-# New-AzFrontDoorRuleGroupOverrideObject
+# New-AzWafFrontDoorRuleGroupOverrideObject
 
 ## SYNOPSIS
 Create RuleGroupOverride Object for WAF policy creation
@@ -13,7 +13,7 @@ Create RuleGroupOverride Object for WAF policy creation
 ## SYNTAX
 
 ```
-New-AzFrontDoorRuleGroupOverrideObject -RuleGroupName <String>
+New-AzWafFrontDoorRuleGroupOverrideObject -RuleGroupName <String>
  [-ManagedRuleOverride <PSAzureManagedRuleOverride[]>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
@@ -28,7 +28,7 @@ Create RuleGroupOverride Object for WAF policy creation
 PS C:\> $ruleOverride1 = New-AzFrontDoorManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
 
-PS C:\> New-AzFrontDoorRuleGroupOverrideObject -RuleGroupName SQLI -ManagedRuleOverride $ruleOverride1,$ruleOverride2
+PS C:\> New-AzWafFrontDoorRuleGroupOverrideObject -RuleGroupName SQLI -ManagedRuleOverride $ruleOverride1,$ruleOverride2
 
 RuleGroupName ManagedRuleOverrides
 ------------- --------------------
@@ -99,4 +99,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md)
+[New-AzWafFrontDoorManagedRuleObject](./New-AzWafFrontDoorManagedRuleObject.md)

@@ -20,9 +20,9 @@ using Microsoft.Azure.Commands.FrontDoor.Models;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorManagedRuleOverrideObject cmdlet.
+    /// Defines the New-AzWafFrontDoorManagedRuleOverrideObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorManagedRuleOverrideObject"), OutputType(typeof(PSAzureManagedRuleOverride))]
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "WafFrontDoorManagedRuleOverrideObject"), OutputType(typeof(PSAzureManagedRuleOverride))]
     public class NewAzureRmFrontDoorManagedRuleOverrideObject : AzureFrontDoorCmdletBase
     {
         /// <summary>

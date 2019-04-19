@@ -20,7 +20,7 @@ Enable HTTPS for a custom domain using Front Door managed certificate or using o
 ### [Get-AzFrontDoor](Get-AzFrontDoor.md)
 Get Front Door load balancer
 
-### [Get-AzFrontDoorFireWallPolicy](Get-AzFrontDoorFireWallPolicy.md)
+### [Get-AzWafFrontDoorFireWallPolicy](Get-AzWafFrontDoorFireWallPolicy.md)
 Get WAF policy
 
 ### [Get-AzFrontDoorFrontendEndpoint](Get-AzFrontDoorFrontendEndpoint.md)
@@ -35,10 +35,10 @@ Create a PSBackend object
 ### [New-AzFrontDoorBackendPoolObject](New-AzFrontDoorBackendPoolObject.md)
 Create a PSBackendPool object for Front Door creation
 
-### [New-AzFrontDoorCustomRuleObject](New-AzFrontDoorCustomRuleObject.md)
+### [New-AzWafFrontdoorCustomRuleobject](New-AzWafFrontdoorCustomRuleobject.md)
 Create CustomRule Object for WAF policy creation
 
-### [New-AzFrontDoorFireWallPolicy](New-AzFrontDoorFireWallPolicy.md)
+### [New-AzWafFrontDoorFireWallPolicy](New-AzWafFrontDoorFireWallPolicy.md)
 Create WAF policy
 
 ### [New-AzFrontDoorFrontendEndpointObject](New-AzFrontDoorFrontendEndpointObject.md)
@@ -50,19 +50,19 @@ Create a PSHealthProbeSetting object for Front Door creation
 ### [New-AzFrontDoorLoadBalancingSettingObject](New-AzFrontDoorLoadBalancingSettingObject.md)
 Create a PSLoadBalancingSetting object for Front Door creation
 
-### [New-AzFrontDoorManagedRuleObject](New-AzFrontDoorManagedRuleObject.md)
+### [New-AzWafFrontDoorManagedRuleObject](New-AzWafFrontDoorManagedRuleObject.md)
 Create ManagedRule Object for WAF policy creation
 
-### [New-AzFrontDoorManagedRuleOverrideObject](New-AzFrontDoorManagedRuleOverrideObject.md)
+### [New-AzWafFrontDoorManagedRuleOverrideObject](New-AzWafFrontDoorManagedRuleOverrideObject.md)
 Create managed rule override object
 
-### [New-AzFrontDoorMatchConditionObject](New-AzFrontDoorMatchConditionObject.md)
+### [New-AzWafFrontDoorMatchConditionObject](New-AzWafFrontDoorMatchConditionObject.md)
 Create MatchCondition Object for WAF policy creation
 
 ### [New-AzFrontDoorRoutingRuleObject](New-AzFrontDoorRoutingRuleObject.md)
 Create a PSRoutingRuleObject for Front Door creation
 
-### [New-AzFrontDoorRuleGroupOverrideObject](New-AzFrontDoorRuleGroupOverrideObject.md)
+### [New-AzWafFrontDoorRuleGroupOverrideObject](New-AzWafFrontDoorRuleGroupOverrideObject.md)
 Create RuleGroupOverride Object for WAF policy creation
 
 ### [Remove-AzFrontDoor](Remove-AzFrontDoor.md)
@@ -71,12 +71,12 @@ Remove Front Door load balancer
 ### [Remove-AzFrontDoorContent](Remove-AzFrontDoorContent.md)
 Remove contents in Front Door
 
-### [Remove-AzFrontDoorFireWallPolicy](Remove-AzFrontDoorFireWallPolicy.md)
+### [Remove-AzWafFrontDoorFireWallPolicy](Remove-AzWafFrontDoorFireWallPolicy.md)
 Remove WAF policy
 
 ### [Set-AzFrontDoor](Set-AzFrontDoor.md)
 Update a Front Door load balancer
 
-### [Update-AzFrontDoorFireWallPolicy](Update-AzFrontDoorFireWallPolicy.md)
+### [Update-AzWafFrontDoorFireWallPolicy](Update-AzWafFrontDoorFireWallPolicy.md)
 Update WAF policy
 

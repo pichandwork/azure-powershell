@@ -21,10 +21,10 @@ using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorManagedRuleObject cmdlet.
+    /// Defines the New-AzWafFrontDoorManagedRuleObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorManagedRuleObject"), OutputType(typeof(PSAzureManagedRule))]
-    public class NewAzureRmFrontDoorManagedRuleObject : AzureFrontDoorCmdletBase
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "WafFrontDoorManagedRuleObject"), OutputType(typeof(PSAzureManagedRule))]
+    public class NewAzureRmWafFrontDoorManagedRuleObject : AzureFrontDoorCmdletBase
     {
         /// <summary>
         /// Type of the ruleset (e.g.: DefaultRuleSet)

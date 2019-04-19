@@ -12,7 +12,7 @@ Create a PSRoutingRuleObject for Front Door creation
 
 ## SYNTAX
 
-### ByFieldsWithForwardingParameterSet
+### ByFieldsWithForwardingParameterSet (Default)
 ```
 New-AzFrontDoorRoutingRuleObject -ResourceGroupName <String> -FrontDoorName <String> -Name <String>
  -FrontendEndpointName <String[]> -BackendPoolName <String> [-AcceptedProtocol <PSProtocol[]>]

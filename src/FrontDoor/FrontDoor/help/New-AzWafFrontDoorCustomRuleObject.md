@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
-online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-azfrontdoorcustomruleobject
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-AzWafFrontDoorCustomRuleobject
 schema: 2.0.0
 ---
 
-# New-AzFrontDoorCustomRuleObject
+# New-AzWafFrontdoorCustomRuleobject
 
 ## SYNOPSIS
 Create CustomRule Object for WAF policy creation
@@ -13,7 +13,7 @@ Create CustomRule Object for WAF policy creation
 ## SYNTAX
 
 ```
-New-AzFrontDoorCustomRuleObject -Name <String> -RuleType <PSCustomRuleType>
+New-AzWafFrontDoorCustomRuleobject -Name <String> -RuleType <PSCustomRuleType>
  -MatchCondition <PSMatchCondition[]> -Action <PSAction> -Priority <Int32>
  [-RateLimitDurationInMinutes <Int32>] [-RateLimitThreshold <Int32>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
@@ -26,7 +26,7 @@ Create CustomRule Object for WAF policy creation
 
 ### Example 1
 ```powershell
-PS C:\> New-AzFrontDoorCustomRuleObject -Name "Rule1" -RuleType MatchRule -MatchCondition $matchCondition1 -Action Block -Priority 2
+PS C:\> New-AzWafFrontDoorCustomRuleobject -Name "Rule1" -RuleType MatchRule -MatchCondition $matchCondition1 -Action Block -Priority 2
 
 Name   RuleType Action Priority RateLimitDurationInMinutes
 ----   -------- ------ -------- --------------------------
@@ -176,5 +176,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md)
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md)
+[New-AzWafFrontDoorFireWallPolicy](./New-AzWafFrontDoorFireWallPolicy.md)
+[Set-AzWafFrontDoorFireWallPolicy](./Set-AzWafFrontDoorFireWallPolicy.md)

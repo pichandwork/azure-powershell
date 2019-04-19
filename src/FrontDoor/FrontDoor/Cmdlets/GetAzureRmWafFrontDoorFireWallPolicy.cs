@@ -27,10 +27,10 @@ using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the Get-AzFrontDoorFireWallPolicy cmdlet.
+    /// Defines the Get-AzWafFrontDoorFireWallPolicy cmdlet.
     /// </summary>
-    [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorFireWallPolicy"), OutputType(typeof(PSPolicy))]
-    public class GetAzureRmFrontDoorFireWallPolicy : AzureFrontDoorCmdletBase
+    [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "WafFrontDoorFireWallPolicy"), OutputType(typeof(PSPolicy))]
+    public class GetAzureRmWafFrontDoorFireWallPolicy : AzureFrontDoorCmdletBase
     {
         /// <summary>
         /// The resource group name.

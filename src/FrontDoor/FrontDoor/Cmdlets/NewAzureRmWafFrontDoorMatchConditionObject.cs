@@ -21,9 +21,9 @@ using Microsoft.WindowsAzure.Commands.Utilities.Common;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorMatchConditionObject cmdlet.
+    /// Defines the New-AzWafFrontDoorMatchConditionObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorMatchConditionObject"), OutputType(typeof(PSMatchCondition))]
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "WafFrontDoorMatchConditionObject"), OutputType(typeof(PSMatchCondition))]
     public class NewAzureRmFrontDoorMatchConditionObject : AzureFrontDoorCmdletBase
     {
 

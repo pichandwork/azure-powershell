@@ -27,9 +27,9 @@ using SdkPolicy = Microsoft.Azure.Management.FrontDoor.Models.WebApplicationFire
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the Update-AzFrontDoorFireWallPolicy cmdlet.
+    /// Defines the Update-AzWafFrontDoorFireWallPolicy cmdlet.
     /// </summary>
-    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorFireWallPolicy", SupportsShouldProcess = true, DefaultParameterSetName = FieldsParameterSet), OutputType(typeof(PSPolicy))]
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "WafFrontDoorFireWallPolicy", SupportsShouldProcess = true, DefaultParameterSetName = FieldsParameterSet), OutputType(typeof(PSPolicy))]
     public class UpdateAzureRmFrontDoorFireWallPolicy : AzureFrontDoorCmdletBase
     {
         /// <summary>

@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
-online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/remove-azfrontdoorfirewallpolicy
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/remove-AzWafFrontDoorFireWallPolicy
 schema: 2.0.0
 ---
 
-# Remove-AzFrontDoorFireWallPolicy
+# Remove-AzWafFrontDoorFireWallPolicy
 
 ## SYNOPSIS
 Remove WAF policy
@@ -14,37 +14,37 @@ Remove WAF policy
 
 ### ByFieldsParameterSet (Default)
 ```
-Remove-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-PassThru]
+Remove-AzWafFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet
 ```
-Remove-AzFrontDoorFireWallPolicy -InputObject <PSPolicy> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzWafFrontDoorFireWallPolicy -InputObject <PSPolicy> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceIdParameterSet
 ```
-Remove-AzFrontDoorFireWallPolicy -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+Remove-AzWafFrontDoorFireWallPolicy -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-AzFrontDoorFireWallPolicy** cmdlet removes a WAF policy under the current subscription
+The **Remove-AzWafFrontDoorFireWallPolicy** cmdlet removes a WAF policy under the current subscription
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzFrontDoorFireWallPolicy -Name $policyName -ResourceGroupName $resourceGroupName
+PS C:\> Remove-AzWafFrontDoorFireWallPolicy -Name $policyName -ResourceGroupName $resourceGroupName
 ```
 
 Remove the WAF policy called $policyName in $resourceGroupName.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzFrontDoorFireWallPolicy -ResourceGroupName $resourceGroupName | Remove-AzFrontDoorFireWallPolicy
+PS C:\> Get-AzWafFrontDoorFireWallPolicy -ResourceGroupName $resourceGroupName | Remove-AzWafFrontDoorFireWallPolicy
 ```
 
 Remove all WAF policy in $resourceGroupName.
@@ -189,5 +189,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md)
-[Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md)
+[New-AzWafFrontDoorFireWallPolicy](./New-AzWafFrontDoorFireWallPolicy.md)
+[Get-AzWafFrontDoorFireWallPolicy](./Get-AzWafFrontDoorFireWallPolicy.md)

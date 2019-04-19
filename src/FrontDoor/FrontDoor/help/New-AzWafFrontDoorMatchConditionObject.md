@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
-online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-azfrontdoormatchconditionobject
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/new-AzWafFrontDoorMatchConditionObject
 schema: 2.0.0
 ---
 
-# New-AzFrontDoorMatchConditionObject
+# New-AzWafFrontDoorMatchConditionObject
 
 ## SYNOPSIS
 Create MatchCondition Object for WAF policy creation
@@ -13,7 +13,7 @@ Create MatchCondition Object for WAF policy creation
 ## SYNTAX
 
 ```
-New-AzFrontDoorMatchConditionObject -MatchVariable <PSMatchVariable> -OperatorProperty <PSOperatorProperty>
+New-AzWafFrontDoorMatchConditionObject -MatchVariable <PSMatchVariable> -OperatorProperty <PSOperatorProperty>
  [-MatchValue <String[]>] [-Selector <String>] [-NegateCondition <Boolean>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -25,7 +25,7 @@ Create MatchCondition Object for WAF policy creation
 
 ### Example 1
 ```powershell
-PS C:\> New-AzFrontDoorMatchConditionObject -MatchVariable RequestHeader -OperatorProperty Contains -Selector "User-Agent" -MatchValue "Windows"
+PS C:\> New-AzWafFrontDoorMatchConditionObject -MatchVariable RequestHeader -OperatorProperty Contains -Selector "User-Agent" -MatchValue "Windows"
 
 
 MatchVariable OperatorProperty MatchValue Selector   NegateCondition
@@ -147,4 +147,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[New-AzFrontDoorCustomRuleObject](./New-AzFrontDoorCustomRuleObject.md)
+[New-AzWafFrontDoorCustomRuleObject](./New-AzWafFrontDoorCustomRuleObject.md)
