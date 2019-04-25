@@ -14,16 +14,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Text;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
-    public class PSHeaderAction : PSResource
+    public enum PSMatchProcessingBehavior
     {
-        public string ActionType { get; set; }
-
-        public string Value { get; set; }
-
-        public string HeaderName { get; set; }
+        Continue,
+        Stop
     }
 }

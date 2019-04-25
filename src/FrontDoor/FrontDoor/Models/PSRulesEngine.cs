@@ -1,5 +1,4 @@
-﻿// ----------------------------------------------------------------------------------
-//
+﻿//
 // Copyright Microsoft Corporation
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,16 +13,20 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Text;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
-    public class PSHeaderAction : PSResource
+    class PSRulesEngine
     {
-        public string ActionType { get; set; }
+        string Name;
 
-        public string Value { get; set; }
+        int Priority;
 
-        public string HeaderName { get; set; }
+        PSRulesEngineAction Action;
+
+        PSRulesEngineMatchCondition[] MatchConditions;
+
+        string MatchProcessingBehavior;
     }
 }

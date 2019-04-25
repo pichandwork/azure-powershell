@@ -28,22 +28,28 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorRulesEngineHeaderAction cmdlet.
+    /// Defines the New-AzFrontDoorRulesEngineActionObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineActionObject"), OutputType(typeof(PSRuleAction))]
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineActionObject"), OutputType(typeof(PSRulesEngineAction))]
     public class NewFrontDoorRulesEngineActionObject : AzureFrontDoorCmdletBase
     {
-        [Parameter(Mandatory = true, HelpMessage = "Which type of manipulation to apply to the header.")]
-        [ValidateNotNullOrEmpty]
-        public PSActionType? ActionType { get; set; }
+        /// <summary>
+        /// A list of header actions to apply from the request from AFD to the origin.
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = "A list of header actions to apply from the request from AFD to the origin.")]
+        PSHeaderAction[] RequestHeaderActions;
 
-        [Parameter(Mandatory = true, HelpMessage = "The name of the header this action will apply to.")]
-        [ValidateNotNullOrEmpty]
-        public string HeaderName { get; set; }
+        /// <summary>
+        /// A list of header actions to apply from the response from AFD to the origin.
+        /// </summary>
+        [Parameter(Mandatory = true, HelpMessage = "A list of header actions to apply from the response from AFD to the origin.")]
+        PSHeaderAction[] ResponseHeaderActions;
 
-        [Parameter(Mandatory = true, HelpMessage = "The value to update the given header name with. This value is not used if the actionType is Delete.")]
-        [ValidateNotNullOrEmpty]
-        public string Value { get; set; }
+        /// <summary>
+        /// Override the route configuration.
+        /// </summary>
+        [Parameter(Mandatory = true, HelpMessage = "Override the route configuration.")]
+        PSRouteConfiguration RouteConfigurationOverride;
 
         public override void ExecuteCmdlet()
         {

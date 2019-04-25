@@ -34,20 +34,27 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
     public class NewFrontDoorHeaderActionObject : AzureFrontDoorCmdletBase
     {
         [Parameter(Mandatory = true, HelpMessage = "Which type of manipulation to apply to the header.")]
+        [PSArgumentCompleter("Append", "Delete", "Overwrite")]
         [ValidateNotNullOrEmpty]
-        public PSActionType? ActionType { get; set; }
+        public string ActionType { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = "The name of the header this action will apply to.")]
         [ValidateNotNullOrEmpty]
         public string HeaderName { get; set; }
 
-        [Parameter(Mandatory = true, HelpMessage = "The value to update the given header name with. This value is not used if the actionType is Delete.")]
+        [Parameter(Mandatory = false, HelpMessage = "The value to update the given header name with. This value is not used if the actionType is Delete.")]
         [ValidateNotNullOrEmpty]
         public string Value { get; set; }
 
         public override void ExecuteCmdlet()
         {
-
+            var headerActionObject = new PSHeaderAction
+            {
+                ActionType = ActionType,
+                HeaderName = HeaderName,
+                Value = Value
+            };
+            WriteObject(headerActionObject);
         }
     }
 }
