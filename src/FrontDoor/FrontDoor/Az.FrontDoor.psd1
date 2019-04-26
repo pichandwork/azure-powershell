@@ -93,7 +93,7 @@ CmdletsToExport = 'New-AzFrontDoor', 'Get-AzFrontDoor', 'Set-AzFrontDoor',
 			   'New-AzFrontDoorHeaderActionObject'
 			   'New-AzFrontDoorRulesEngineActionObject'
 			   'New-AzFrontDoorRulesEngineMatchConditionObject',
-			   'New-AzFrontDoorRulesEngineRule',
+			   'New-AzFrontDoorRulesEngineRuleObject',
 			   'New-AzFrontDoorRouteConfigurationObject'
 
 # Variables to export from this module
