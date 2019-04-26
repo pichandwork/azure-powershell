@@ -17,12 +17,12 @@ using System.Text;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
-    class PSRulesEngineAction
+    public class PSRulesEngineAction
     {
-        PSHeaderAction[] RequestHeaderActions;
+        public PSHeaderAction[] RequestHeaderActions;
 
-        PSHeaderAction[] ResponseHeaderActions;
+        public PSHeaderAction[] ResponseHeaderActions;
 
-        PSRouteConfiguration RouteConfigurationOverride;
+        public PSRouteConfiguration RouteConfigurationOverride;
     }
 }

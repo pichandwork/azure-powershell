@@ -18,18 +18,16 @@ using System.Text;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
-    public class PSRulesEngineMatchCondition
+    public class PSRulesEngineRule
     {
-        public string MatchVariable;
+        public string Name;
 
-        public string Selector;
+        public int Priority;
 
-        public string Operator;
+        public PSRulesEngineAction Action;
 
-        public bool NegateCondition;
+        public PSRulesEngineMatchCondition[] MatchConditions;
 
-        public string[] MatchValue;
-
-        public string[] Transforms;
+        public string MatchProcessingBehavior;
     }
 }

@@ -77,6 +77,17 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 
         public override void ExecuteCmdlet()
         {
+            var rulesEngineMatchCondition = new PSRulesEngineMatchCondition
+            {
+                MatchValue = MatchValues,
+                MatchVariable = MatchVariable,
+                Selector = Selector,
+                Operator = Operator,
+                NegateCondition = NegateCondition,
+                Transforms = Transforms
+            };
+
+            WriteObject(rulesEngineMatchCondition);
         }
     }
 }

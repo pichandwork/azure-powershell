@@ -53,7 +53,14 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 
         public override void ExecuteCmdlet()
         {
+            var rulesEngineAction = new PSRulesEngineAction
+            {
+                RequestHeaderActions = RequestHeaderActions,
+                ResponseHeaderActions = ResponseHeaderActions,
+                RouteConfigurationOverride = RouteConfigurationOverride
+            };
 
+            WriteObject(rulesEngineAction);
         }
     }
 }

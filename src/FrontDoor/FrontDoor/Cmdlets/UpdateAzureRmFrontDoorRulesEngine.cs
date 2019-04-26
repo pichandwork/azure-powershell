@@ -28,42 +28,12 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorRulesEngine cmdlet.
+    /// Defines the Update-AzFrontDoorRulesEngine cmdlet.
     /// </summary>
-    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineRule"), OutputType(typeof(PSRulesEngine))]
-    public class UpdateFrontDoorRulesEngineRule : AzureFrontDoorCmdletBase
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine"), OutputType(typeof(PSRulesEngine))]
+    public class UpdateFrontDoorRulesEngine : AzureFrontDoorCmdletBase
     {
-        /// <summary>
-        /// A name to refer to this specific rule.
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A name to refer to this specific rule.")]
-        [ValidateNotNullOrEmpty]
-        string Name;
-
-        /// <summary>
-        /// A priority assigned to this rule. 
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A priority assigned to this rule.")]
-        int Priority;
-
-        /// <summary>
-        /// Actions to perform on the request and response if all of the match conditions are met.
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "Actions to perform on the request and response if all of the match conditions are met.")]
-        PSRulesEngineAction Action;
-
-        /// <summary>
-        /// A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.
-        /// </summary>
-        [Parameter(Mandatory = false, HelpMessage = "A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.")]
-        PSRulesEngineMatchCondition[] MatchConditions;
-
-        /// <summary>
-        /// If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
-        /// </summary>
-        [Parameter(Mandatory = false, HelpMessage = "If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.")]
-        PSMatchProcessingBehavior MatchProcessingBehavior = PSMatchProcessingBehavior.Continue;
-
+        
         public override void ExecuteCmdlet()
         {
         }

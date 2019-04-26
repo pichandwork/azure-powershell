@@ -28,10 +28,10 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the New-AzFrontDoorRulesEngine cmdlet.
+    /// Defines the New-AzFrontDoorRulesEngineRuleObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineRule"), OutputType(typeof(PSRulesEngine))]
-    public class NewFrontDoorRulesEngineRule : AzureFrontDoorCmdletBase
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineRuleObject"), OutputType(typeof(PSRulesEngine))]
+    public class NewFrontDoorRulesEngineRuleObject : AzureFrontDoorCmdletBase
     {
         /// <summary>
         /// A name to refer to this specific rule.
@@ -67,6 +67,16 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 
         public override void ExecuteCmdlet()
         {
+            var rulesEngineRule = new PSRulesEngineRule
+            {
+                Name = Name,
+                Priority = Priority,
+                Action = Action,
+                MatchConditions = MatchConditions,
+                MatchProcessingBehavior = MatchProcessingBehavior
+            };
+
+            WriteObject(rulesEngineRule);
         }
     }
 }
