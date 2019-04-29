@@ -24,6 +24,7 @@ using Microsoft.Azure.Management.FrontDoor;
 using System.Linq;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
@@ -126,6 +127,35 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 
         public override void ExecuteCmdlet()
         {
+            if(ParameterSetName == FieldsWithForwardingParameterSet)
+            {
+                string subid = DefaultContext.Subscription.Id;
+                string BackendPoolId = string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Network/frontDoors/{2}/BackendPools/{3}",
+                  subid, ResourceGroupName, FrontDoorName, BackendPoolName);
+                var forwardingConfiguration = new PSForwardingConfiguration
+                {
+                    CustomForwardingPath = CustomForwardingPath,
+                    ForwardingProtocol = !this.IsParameterBound(c => c.ForwardingProtocol) ? PSForwardingProtocol.MatchRequest.ToString() : ForwardingProtocol,
+                    QueryParameterStripDirective = !this.IsParameterBound(c => c.QueryParameterStripDirective) ? PSQueryParameterStripDirective.StripAll.ToString() : QueryParameterStripDirective,
+                    DynamicCompression = !this.IsParameterBound(c => c.DynamicCompression) ? PSEnabledState.Enabled : DynamicCompression,
+                    BackendPoolId = BackendPoolId,
+                    EnableCaching = !this.IsParameterBound(c => c.EnableCaching) ? false : EnableCaching
+                };
+                WriteObject(forwardingConfiguration);
+            }
+            else if(ParameterSetName == FieldsWithRedirectParameterSet)
+            {
+                var redirectConfiguration = new PSRedirectConfiguration
+                {
+                    RedirectProtocol = !this.IsParameterBound(c => c.RedirectProtocol) ? PSRedirectProtocol.MatchRequest.ToString() : RedirectProtocol,
+                    RedirectType = !this.IsParameterBound(c => c.RedirectType) ? PSRedirectType.Moved.ToString() : RedirectType,
+                    CustomHost = !this.IsParameterBound(c => c.CustomHost) ? "" : CustomHost,
+                    CustomFragment = CustomFragment,
+                    CustomPath = !this.IsParameterBound(c => c.CustomPath) ? "" : CustomPath,
+                    CustomQueryString = CustomQueryString
+                };
+                WriteObject(redirectConfiguration);
+            }
 
         }
     }

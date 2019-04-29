@@ -25,29 +25,31 @@ using System.Linq;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 
+
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the Update-AzFrontDoorRulesEngine cmdlet.
+    /// Defines the New-AzFrontDoorRulesEngine cmdlet.
     /// </summary>
-    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine"), OutputType(typeof(PSRulesEngine))]
-    public class UpdateFrontDoorRulesEngine : AzureFrontDoorCmdletBase
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine"), OutputType(typeof(PSRulesEngine))]
+    public class NewAzureRmFrontDoorRulesEngine : AzureFrontDoorCmdletBase
     {
         /// <summary>
         /// A name to refer to this specific rule.
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A name to refer to this specific rule engine.")]
+        [Parameter(Mandatory = true, HelpMessage = "A name to refer to this specific rule.")]
         [ValidateNotNullOrEmpty]
         string Name;
 
         /// <summary>
         /// Actions to perform on the request and response if all of the match conditions are met.
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A list of rules that define a particular Rules Engine Configuration.")]
+        [Parameter(Mandatory = true, HelpMessage = "Actions to perform on the request and response if all of the match conditions are met.")]
         PSRulesEngineAction Action;
 
         public override void ExecuteCmdlet()
         {
+
         }
     }
 }

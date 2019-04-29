@@ -30,7 +30,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
     /// <summary>
     /// Defines the New-AzFrontDoorRulesEngineRuleObject cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineRuleObject"), OutputType(typeof(PSRulesEngine))]
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngineRuleObject"), OutputType(typeof(PSRulesEngineRule))]
     public class NewFrontDoorRulesEngineRuleObject : AzureFrontDoorCmdletBase
     {
         /// <summary>
