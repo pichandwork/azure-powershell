@@ -28,51 +28,31 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 {
     /// <summary>
-    /// Defines the Update-AzFrontDoorRulesEngine cmdlet.
+    /// Defines the Get-AzFrontDoorRulesEngine cmdlet.
     /// </summary>
-    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine", SupportsShouldProcess = true, DefaultParameterSetName = FieldsParameterSet), OutputType(typeof(PSRulesEngine))]
-    public class UpdateFrontDoorRulesEngine : AzureFrontDoorCmdletBase
+    [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine"), OutputType(typeof(PSRulesEngine))]
+    public class GetFrontDoorRulesEngine : AzureFrontDoorCmdletBase
     {
         /// <summary>
         /// The resource group name that the rules engine will be created in.
         /// </summary>
-        [Parameter(Mandatory = true, ParameterSetName = FieldsParameterSet, HelpMessage = "The resource group name that the rules engine will be created in.")]
+        [Parameter(Mandatory = true, HelpMessage = "The resource group name that the rules engine will be created in.")]
         [ValidateNotNullOrEmpty]
         public string ResourceGroupName { get; set; }
 
         /// <summary>
         /// The Front Door name.
         /// </summary>
-        [Parameter(Mandatory = true, ParameterSetName = FieldsParameterSet, HelpMessage = "Front Door name.")]
+        [Parameter(Mandatory = true, HelpMessage = "Front Door name.")]
         [ValidateNotNullOrEmpty]
         public string FrontDoorName { get; set; }
 
         /// <summary>
         /// The name of the rule engine.
         /// </summary>
-        [Parameter(Mandatory = true, ParameterSetName = FieldsParameterSet, HelpMessage = "The name of the rule engine.")]
+        [Parameter(Mandatory = false, HelpMessage = "The name of the rule engine.")]
         [ValidateNotNullOrEmpty]
         string Name;
-
-        /// <summary>
-        ///The Rules Engine object to update.
-        /// </summary>
-        [Parameter(Mandatory = true, ParameterSetName = ObjectParameterSet, ValueFromPipeline = true, HelpMessage = "The Rules Engine object to update.")]
-        [ValidateNotNullOrEmpty]
-        public PSRulesEngine InputObject { get; set; }
-
-        /// <summary>
-        /// Resource Id of the Front Door to update
-        /// </summary>
-        [Parameter(Mandatory = true, ParameterSetName = ResourceIdParameterSet, ValueFromPipelineByPropertyName = true, HelpMessage = "Resource Id of the Front Door to update")]
-        [ValidateNotNullOrEmpty]
-        public string ResourceId { get; set; }
-
-        /// <summary>
-        /// A list of rules that define a particular Rules Engine Configuration.
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A list of rules that define a particular Rules Engine Configuration.")]
-        PSRulesEngineRule[] Rules;
 
         public override void ExecuteCmdlet()
         {

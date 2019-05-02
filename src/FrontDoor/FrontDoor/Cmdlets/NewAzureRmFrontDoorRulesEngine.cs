@@ -31,21 +31,35 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
     /// <summary>
     /// Defines the New-AzFrontDoorRulesEngine cmdlet.
     /// </summary>
-    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine"), OutputType(typeof(PSRulesEngine))]
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "FrontDoorRulesEngine", SupportsShouldProcess = true, DefaultParameterSetName = FieldsParameterSet), OutputType(typeof(PSRulesEngine))]
     public class NewAzureRmFrontDoorRulesEngine : AzureFrontDoorCmdletBase
     {
         /// <summary>
-        /// A name to refer to this specific rule.
+        /// The resource group name that the rules engine will be created in.
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "A name to refer to this specific rule.")]
+        [Parameter(Mandatory = true, HelpMessage = "The resource group name that the rules engine will be created in.")]
+        [ValidateNotNullOrEmpty]
+        public string ResourceGroupName { get; set; }
+
+        /// <summary>
+        /// The Front Door name.
+        /// </summary>
+        [Parameter(Mandatory = true, HelpMessage = "Front Door name.")]
+        [ValidateNotNullOrEmpty]
+        public string FrontDoorName { get; set; }
+
+        /// <summary>
+        /// The name of the rule engine.
+        /// </summary>
+        [Parameter(Mandatory = true, HelpMessage = "The name of the rule engine.")]
         [ValidateNotNullOrEmpty]
         string Name;
 
         /// <summary>
-        /// Actions to perform on the request and response if all of the match conditions are met.
+        /// A list of rules that define a particular Rules Engine Configuration.
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "Actions to perform on the request and response if all of the match conditions are met.")]
-        PSRulesEngineAction Action;
+        [Parameter(Mandatory = true, HelpMessage = "A list of rules that define a particular Rules Engine Configuration.")]
+        PSRulesEngineRule[] Rules;
 
         public override void ExecuteCmdlet()
         {
