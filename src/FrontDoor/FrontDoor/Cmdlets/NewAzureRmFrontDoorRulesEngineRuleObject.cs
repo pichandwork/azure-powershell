@@ -38,32 +38,32 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "A name to refer to this specific rule.")]
         [ValidateNotNullOrEmpty]
-        string Name;
+        public string Name { get; set; }
 
         /// <summary>
         /// A priority assigned to this rule. 
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "A priority assigned to this rule.")]
-        int Priority;
+        public int Priority { get; set; }
 
         /// <summary>
         /// Actions to perform on the request and response if all of the match conditions are met.
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "Actions to perform on the request and response if all of the match conditions are met.")]
-        PSRulesEngineAction Action;
+        public PSRulesEngineAction Action { get; set; }
 
         /// <summary>
         /// A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "A list of match conditions that must meet in order for the actions of this rule to run. Having no match conditions means the actions will always run.")]
-        PSRulesEngineMatchCondition[] MatchConditions;
+        public PSRulesEngineMatchCondition[] MatchConditions { get; set; }
 
         /// <summary>
         /// If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.")]
         [PSArgumentCompleter("Continue", "Stop")]
-        string MatchProcessingBehavior = PSMatchProcessingBehavior.Continue.ToString();
+        public string MatchProcessingBehavior = PSMatchProcessingBehavior.Continue.ToString();
 
         public override void ExecuteCmdlet()
         {

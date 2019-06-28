@@ -70,6 +70,15 @@ namespace Microsoft.Azure.Commands.FrontDoor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Rules Engine {0}?.
+        /// </summary>
+        internal static string CreateRulesEngine {
+            get {
+                return ResourceManager.GetString("CreateRulesEngine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create WebApplicationFirewallPolicy?.
         /// </summary>
         internal static string CreateWebApplicationFirewallPolicy {
@@ -106,20 +115,20 @@ namespace Microsoft.Azure.Commands.FrontDoor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is already an existing Rules Engine with name &apos;{0}&apos; in the Front Door &apos;{1}&apos;.
+        /// </summary>
+        internal static string Error_CreateExistingRulesEngine {
+            get {
+                return ResourceManager.GetString("Error_CreateExistingRulesEngine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is already an existing WAF policy with name &apos;{0}&apos; in the resource group &apos;{1}&apos;..
         /// </summary>
         internal static string Error_CreateExistingWebApplicationFirewallPolicy {
             get {
                 return ResourceManager.GetString("Error_CreateExistingWebApplicationFirewallPolicy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Front Door with name &apos;{0}&apos; in the resource group &apos;{1}&apos; does not exist..
-        /// </summary>
-        internal static string Error_DeleteNonExistingFrontDoor {
-            get {
-                return ResourceManager.GetString("Error_DeleteNonExistingFrontDoor", resourceCulture);
             }
         }
         
@@ -156,6 +165,15 @@ namespace Microsoft.Azure.Commands.FrontDoor.Properties {
         internal static string Error_InvalidResourceId {
             get {
                 return ResourceManager.GetString("Error_InvalidResourceId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Front Door with name &apos;{0}&apos; in the resource group &apos;{1}&apos; does not exist..
+        /// </summary>
+        internal static string Error_NonExistingFrontDoor {
+            get {
+                return ResourceManager.GetString("Error_NonExistingFrontDoor", resourceCulture);
             }
         }
         
@@ -210,6 +228,15 @@ namespace Microsoft.Azure.Commands.FrontDoor.Properties {
         internal static string RemoveWebApplicationFirewallPolicy {
             get {
                 return ResourceManager.GetString("RemoveWebApplicationFirewallPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current context.
+        /// </summary>
+        internal static string RulesEngineTarget {
+            get {
+                return ResourceManager.GetString("RulesEngineTarget", resourceCulture);
             }
         }
         

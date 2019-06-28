@@ -52,7 +52,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "The name of the rule engine.")]
         [ValidateNotNullOrEmpty]
-        string Name;
+        public string Name { get; set; }
 
         public override void ExecuteCmdlet()
         {

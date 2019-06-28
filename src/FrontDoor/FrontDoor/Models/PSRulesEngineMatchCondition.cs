@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
 
         public string Operator;
 
-        public bool NegateCondition;
+        public bool? NegateCondition;
 
         public string[] MatchValue;
 

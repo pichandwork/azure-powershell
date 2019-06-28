@@ -75,7 +75,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
 
             if (existingProfile == null)
             {
-                throw new PSArgumentException(string.Format(Resources.Error_DeleteNonExistingFrontDoor,
+                throw new PSArgumentException(string.Format(Resources.Error_NonExistingFrontDoor,
                     Name,
                     ResourceGroupName));
             }

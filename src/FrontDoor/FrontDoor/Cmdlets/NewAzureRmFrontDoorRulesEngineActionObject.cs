@@ -37,26 +37,26 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// A list of header actions to apply from the request from AFD to the origin.
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "A list of header actions to apply from the request from AFD to the origin.")]
-        PSHeaderAction[] RequestHeaderActions;
+        public PSHeaderAction[] RequestHeaderActions { get; set; }
 
         /// <summary>
         /// A list of header actions to apply from the response from AFD to the origin.
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "A list of header actions to apply from the response from AFD to the origin.")]
-        PSHeaderAction[] ResponseHeaderActions;
+        public PSHeaderAction[] ResponseHeaderActions { get; set; }
 
         /// <summary>
         /// Override the route configuration.
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "Override the route configuration.")]
-        PSRouteConfiguration RouteConfigurationOverride;
+        public PSRouteConfiguration RouteConfigurationOverride { get; set; }
 
         public override void ExecuteCmdlet()
         {
             var rulesEngineAction = new PSRulesEngineAction
             {
-                RequestHeaderActions = RequestHeaderActions,
-                ResponseHeaderActions = ResponseHeaderActions,
+                RequestHeaderActions = RequestHeaderActions.ToList(),
+                ResponseHeaderActions = ResponseHeaderActions.ToList(),
                 RouteConfigurationOverride = RouteConfigurationOverride
             };
 

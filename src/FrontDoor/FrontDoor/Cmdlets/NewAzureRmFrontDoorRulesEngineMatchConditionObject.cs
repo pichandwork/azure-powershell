@@ -38,42 +38,44 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "Match Variable.")]
         [ValidateNotNullOrEmpty]
-        string MatchVariable;
+        [PSArgumentCompleter("IsMobile", "RemoteAddr", "RequestMethod", "QueryString", "PostArgs", "RequestUri", "RequestPath", "RequestFilename", "RequestFilenameExtension", "RequestHeader", "RequestBody", "RequestScheme")]
+        public string MatchVariable { get; set; }
 
         /// <summary>
         /// Name of selector in RequestHeader or RequestBody to be matched
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "Name of selector in RequestHeader or RequestBody to be matched.")]
+        [Parameter(Mandatory = false, HelpMessage = "Name of selector in RequestHeader or RequestBody to be matched.")]
         [ValidateNotNullOrEmpty]
-        string Selector;
+        public string Selector { get; set; }
 
         /// <summary>
         /// Describes operator to apply to the match condition
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "Describes operator to apply to the match condition.")]
         [ValidateNotNullOrEmpty]
-        string Operator;
+        [PSArgumentCompleter("Any", "IPMatch", "GeoMatch", "Equal", "Contains", "LessThan", "GreaterThan", "LessThanOrEqual", "GreaterThanOrEqual", "BeginsWith", "EndsWith")]
+        public string Operator { get; set; }
 
         /// <summary>
         /// Describes if this is negate condition or not
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "Describes if this is negate condition or not.")]
+        [Parameter(Mandatory = false, HelpMessage = "Describes if this is negate condition or not.")]
         [ValidateNotNullOrEmpty]
-        SwitchParameter NegateCondition;
+        public SwitchParameter NegateCondition { get; set; }
 
         /// <summary>
         /// Match values to match against. The operator will apply to each value in here with OR semantics. If any of them match the variable with the given operator this match condition is considered a match
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "Match values to match against.The operator will apply to each value in here with OR semantics.If any of them match the variable with the given operator this match condition is considered a match.")]
         [ValidateNotNullOrEmpty]
-        string[] MatchValues;
+        public string[] MatchValues { get; set; }
 
         /// <summary>
         /// List of transforms
         /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "List of transforms.")]
+        [Parameter(Mandatory = false, HelpMessage = "List of transforms.")]
         [ValidateNotNullOrEmpty]
-        string[] Transforms;
+        public string[] Transforms { get; set; }
 
         public override void ExecuteCmdlet()
         {

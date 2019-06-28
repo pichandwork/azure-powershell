@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
     public class PSHeaderAction : PSResource
     {
-        public string ActionType { get; set; }
+        public string HeaderActionType { get; set; }
 
         public string Value { get; set; }
 

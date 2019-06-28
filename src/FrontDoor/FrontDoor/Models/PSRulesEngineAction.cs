@@ -19,9 +19,9 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
     public class PSRulesEngineAction
     {
-        public PSHeaderAction[] RequestHeaderActions;
+        public List<PSHeaderAction> RequestHeaderActions;
 
-        public PSHeaderAction[] ResponseHeaderActions;
+        public List<PSHeaderAction> ResponseHeaderActions;
 
         public PSRouteConfiguration RouteConfigurationOverride;
     }

@@ -50,7 +50,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         {
             var headerActionObject = new PSHeaderAction
             {
-                ActionType = ActionType,
+                HeaderActionType = ActionType,
                 HeaderName = HeaderName,
                 Value = Value
             };

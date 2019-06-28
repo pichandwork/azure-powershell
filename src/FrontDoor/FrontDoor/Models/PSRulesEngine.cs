@@ -18,10 +18,8 @@ using System.Text;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
 {
-    public class PSRulesEngine
+    public class PSRulesEngine : PSTrackedResource
     {
-        public string Name;
-
         public PSRulesEngineRule[] Rules;
     }
 }

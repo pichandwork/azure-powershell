@@ -52,7 +52,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// </summary>
         [Parameter(Mandatory = true, ParameterSetName = FieldsParameterSet, HelpMessage = "The name of the rule engine.")]
         [ValidateNotNullOrEmpty]
-        string Name;
+        public string Name { get; set; }
 
         /// <summary>
         ///The Rules Engine object to update.
@@ -72,7 +72,7 @@ namespace Microsoft.Azure.Commands.FrontDoor.Cmdlets
         /// A list of rules that define a particular Rules Engine Configuration.
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "A list of rules that define a particular Rules Engine Configuration.")]
-        PSRulesEngineRule[] Rules;
+        public PSRulesEngineRule[] Rules { get; set; }
 
         public override void ExecuteCmdlet()
         {
